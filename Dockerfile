@@ -1,7 +1,7 @@
 ###############################################################################
 # BUILD STAGE
 
-FROM cgr.dev/chainguard/go:1.19-dev AS builder
+FROM cgr.dev/chainguard/go:1.21-dev AS builder
 RUN mkdir /build
 ADD . /build/
 WORKDIR /build
@@ -15,7 +15,7 @@ RUN chmod 755 /build/*
 ###############################################################################
 # PACKAGE STAGE
 
-FROM cgr.dev/chainguard/go:1.19-dev
+FROM cgr.dev/chainguard/go:1.21-dev
 EXPOSE 9436
 COPY --from=builder /build/* /app/
 WORKDIR /app
