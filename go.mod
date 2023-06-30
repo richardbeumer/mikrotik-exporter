@@ -8,7 +8,7 @@ require (
 	github.com/prometheus/common v0.44.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.8.4
-	gopkg.in/routeros.v2 v2.0.0-20190905230420-1bbf141cdd91
+	gopkg.in/routeros.v2 2a44d57c6730
 	gopkg.in/yaml.v3 v3.0.1
 )
 
