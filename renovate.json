@@ -1,6 +1,3 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "reviewers": ["richardbeumer"],
-  "prHourlyLimit": 10,
-  "prConcurrentLimit": 10
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
