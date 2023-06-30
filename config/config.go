@@ -4,7 +4,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	yaml "gopkg.in/yaml.v2"
+	yaml "gopkg.in/yaml.v3"
 )
 
 // Config represents the configuration for the exporter

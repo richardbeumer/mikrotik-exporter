@@ -1,7 +1,7 @@
 ###############################################################################
 # BUILD STAGE
 
-FROM golang:alpine AS builder
+FROM cgr.dev/chainguard/go:1.19-dev AS builder
 RUN mkdir /build
 ADD . /build/
 WORKDIR /build
@@ -9,16 +9,14 @@ RUN apk update \
     && apk upgrade \
     && apk add --no-cache git
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' .
+COPY scripts/start.sh /build/
+RUN chmod 755 /build/*
 
 ###############################################################################
 # PACKAGE STAGE
 
-FROM alpine
-RUN apk update \
-    && apk upgrade --no-cache
+FROM cgr.dev/chainguard/go:1.19-dev
 EXPOSE 9436
-COPY scripts/start.sh /app/
-COPY --from=builder /build/mikrotik-exporter /app/
-RUN chmod 755 /app/*
+COPY --from=builder /build/* /app/
 WORKDIR /app
 ENTRYPOINT ["./start.sh"]
