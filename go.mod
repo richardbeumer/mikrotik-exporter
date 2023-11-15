@@ -3,7 +3,7 @@ module mikrotik-exporter
 go 1.19
 
 require (
-	github.com/miekg/dns v1.1.56
+	github.com/miekg/dns v1.1.57
 	github.com/prometheus/client_golang v1.17.0
 	github.com/prometheus/common v0.45.0
 	github.com/sirupsen/logrus v1.9.3
