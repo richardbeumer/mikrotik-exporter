@@ -10,7 +10,6 @@ require (
 	github.com/prometheus/client_golang v1.20.4
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.9.0
-	gopkg.in/routeros.v2 v2.0.0-20190905230420-1bbf141cdd91
 	gopkg.in/yaml.v3 v3.0.1
 )
 
