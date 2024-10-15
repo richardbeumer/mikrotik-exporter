@@ -3,16 +3,16 @@
 
 FROM cgr.dev/chainguard/go:latest-dev AS builder
 RUN mkdir /build
-ADD . /build/
+COPY . /build/
 WORKDIR /build
-RUN apk update \
+RUN mv /build/scripts/start.sh /build/ \
+    && apk update \
     && apk upgrade \
-    && apk add --no-cache git
-RUN go mod tidy
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' .
-COPY scripts/start.sh /build/
-RUN chmod 755 /build/*
-
+    && apk add --no-cache git \
+    && go mod tidy \
+    && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' . \
+    && chmod 755 /build/*
+    
 ###############################################################################
 # PACKAGE STAGE
 
