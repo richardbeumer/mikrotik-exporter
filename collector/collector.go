@@ -19,7 +19,7 @@ import (
 	"github.com/miekg/dns"
 	"github.com/prometheus/client_golang/prometheus"
 	log "github.com/sirupsen/logrus"
-	routeros "gopkg.in/routeros.v2"
+	routeros "github.com/go-routeros/routeros/v3"
 )
 
 const (

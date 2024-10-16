@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-routeros/routeros/v3/proto"
 	"github.com/prometheus/client_golang/prometheus"
 	log "github.com/sirupsen/logrus"
-	"gopkg.in/routeros.v2/proto"
 )
 
 var uptimeRegex *regexp.Regexp
