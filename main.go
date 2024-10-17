@@ -51,7 +51,7 @@ var (
 	withWlanSTA   = flag.Bool("with-wlansta", false, "retrieves connected wlan station metrics")
 	withWlanIF    = flag.Bool("with-wlanif", false, "retrieves wlan interface metrics")
 	withCapsman   = flag.Bool("with-capsman", false, "retrieves capsman station metrics")
-	withMonitor   = flag.Bool("with-monitor", false, "retrieves ethernet interface monitor info")
+	withMonitor   = flag.Bool("with-monitor", true, "retrieves ethernet interface monitor info")
 	withIpsec     = flag.Bool("with-ipsec", false, "retrieves ipsec metrics")
 	withLte       = flag.Bool("with-lte", false, "retrieves lte metrics")
 	withNetwatch  = flag.Bool("with-netwatch", false, "retrieves netwatch metrics")
