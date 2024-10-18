@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"flag"
-	"io/ioutil"
 	"os"
 
 	"github.com/prometheus/client_golang/prometheus/collectors/version"
@@ -39,8 +38,8 @@ var (
 	withBgp       = flag.Bool("with-bgp", false, "retrieves BGP routing infrormation")
 	withConntrack = flag.Bool("with-conntrack", false, "retrieves connection tracking metrics")
 	withRoutes    = flag.Bool("with-routes", false, "retrieves routing table information")
-	withDHCP      = flag.Bool("with-dhcp", true, "retrieves DHCP server metrics")
-	withDHCPL     = flag.Bool("with-dhcpl", true, "retrieves DHCP server lease metrics")
+	withDHCP      = flag.Bool("with-dhcp", false, "retrieves DHCP server metrics")
+	withDHCPL     = flag.Bool("with-dhcpl", false, "retrieves DHCP server lease metrics")
 	withDHCPv6    = flag.Bool("with-dhcpv6", false, "retrieves DHCPv6 server metrics")
 	withFirmware  = flag.Bool("with-firmware", false, "retrieves firmware versions")
 	withHealth    = flag.Bool("with-health", false, "retrieves board Health metrics")
@@ -110,7 +109,7 @@ func loadConfig() (*config.Config, error) {
 }
 
 func loadConfigFromFile() (*config.Config, error) {
-	b, err := ioutil.ReadFile(*configFile)
+	b, err := os.ReadFile(*configFile)
 	if err != nil {
 		return nil, err
 	}
