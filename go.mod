@@ -2,7 +2,7 @@ module mikrotik-exporter
 
 go 1.23.0
 
-toolchain go1.25.4
+toolchain go1.25.5
 
 require (
 	github.com/go-routeros/routeros/v3 v3.0.1
