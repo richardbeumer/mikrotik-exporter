@@ -6,7 +6,7 @@ toolchain go1.25.6
 
 require (
 	github.com/go-routeros/routeros/v3 v3.0.1
-	github.com/miekg/dns v1.1.70
+	github.com/miekg/dns v1.1.72
 	github.com/prometheus/client_golang v1.23.2
 	github.com/sirupsen/logrus v1.9.4
 	github.com/stretchr/testify v1.11.1
